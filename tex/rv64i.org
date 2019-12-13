@@ -1,0 +1,21 @@
+| Inst  | Name                        | FMT |  Opcode | funct3 |      funct7 | Description (C)              | Note         |
+|-------+-----------------------------+-----+---------+--------+-------------+------------------------------+--------------|
+| addw  | ADD (W)                     | R   | 0111011 |    0x0 |        0x00 | rd = rs1 + rs2               |              |
+| subw  | SUB (W)                     | R   | 0111011 |    0x0 |        0x20 | rd = rs1 - rs2               |              |
+| sllw  | Shift Left Logical (W)      | R   | 0111011 |    0x1 |        0x00 | rd = rs1 =<<= rs2            |              |
+| srlw  | Shift Right Logical (W)     | R   | 0111011 |    0x5 |        0x00 | rd = rs1 =>>= rs2            |              |
+| sraw  | Shift Right Arith (W)       | R   | 0111011 |    0x5 |        0x00 | rd = rs1 =>>= rs2            | msb-extends  |
+|-------+-----------------------------+-----+---------+--------+-------------+------------------------------+--------------|
+| addiw | Add Immediate (W)           | I   | 0011011 |    0x0 |             | rd = rs1 + imm               |              |
+| slliw | Shift Left Logical Imm (W)  | I   | 0011011 |    0x1 | ~imm[30]=0~ | rd = rs1 =<<= imm[5:0]       |              |
+| srliw | Shift Right Logical Imm (W) | I   | 0011011 |    0x5 | ~imm[30]=0~ | rd = rs1 =>>= imm[5:0]       |              |
+| sraiw | Shift Right Arith Imm (W)   | I   | 0011011 |    0x5 | ~imm[30]=1~ | rd = rs1 =>>= imm[5:0]       | msb-extends  |
+|-------+-----------------------------+-----+---------+--------+-------------+------------------------------+--------------|
+| lwu   | Load Word (U)               | I   | 0000011 |    0x6 |             | rd = M[rs1+imm][0:31]        | zero-extends |
+| ld    | Load Doubleword             | I   | 0000011 |    0x3 |             | rd = M[rs1+imm][0:63]        |              |
+|-------+-----------------------------+-----+---------+--------+-------------+------------------------------+--------------|
+| sd    | Store Doubleword            | S   | 0100011 |    0x3 |             | M[rs1+imm][0:63] = rs2[0:63] |              |
+
+# Local Variables:
+# org-latex-text-markup-alist: ((bold . "\\textbf{%s}") (code . protectedtexttt) (italic . "\\emph{%s}") (strike-through . "\\sout{%s}") (underline . "\\uline{%s}") (verbatim . verb))
+# End:
