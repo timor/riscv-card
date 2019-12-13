@@ -10,9 +10,9 @@ srlw & Shift Right Logical (W) & R & 0111011 & 0x5 & 0x00 & rd = rs1 \verb~>>~ r
 sraw & Shift Right Arith (W) & R & 0111011 & 0x5 & 0x00 & rd = rs1 \verb~>>~ rs2 & msb-extends\\
 \hline
 addiw & Add Immediate (W) & I & 0011011 & 0x0 &  & rd = rs1 + imm & \\
-slliw & Shift Left Logical Imm (W) & I & 0011011 & 0x1 & \texttt{imm[30]=0} & rd = rs1 \verb~<<~ imm[0:4] & \\
-srliw & Shift Right Logical Imm (W) & I & 0011011 & 0x5 & \texttt{imm[30]=0} & rd = rs1 \verb~>>~ imm[0:4] & \\
-sraiw & Shift Right Arith Imm (W) & I & 0011011 & 0x5 & \texttt{imm[30]=1} & rd = rs1 \verb~>>~ imm[0:4] & msb-extends\\
+slliw & Shift Left Logical Imm (W) & I & 0011011 & 0x1 & \texttt{imm[10]=0} & rd = rs1 \verb~<<~ imm[0:4] & \\
+srliw & Shift Right Logical Imm (W) & I & 0011011 & 0x5 & \texttt{imm[10]=0} & rd = rs1 \verb~>>~ imm[0:4] & \\
+sraiw & Shift Right Arith Imm (W) & I & 0011011 & 0x5 & \texttt{imm[10]=1} & rd = rs1 \verb~>>~ imm[0:4] & msb-extends\\
 \hline
 lwu & Load Word (U) & I & 0000011 & 0x6 &  & rd = M[rs1+imm][0:31] & zero-extends\\
 ld & Load Doubleword & I & 0000011 & 0x3 &  & rd = M[rs1+imm][0:63] & \\
